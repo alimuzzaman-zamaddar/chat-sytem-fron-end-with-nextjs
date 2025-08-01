@@ -187,10 +187,10 @@ const Page = () => {
     setSelectedUser(user);
   };
 
-const handleEmojiClick = (emojiData: any) => {
-  setMessage(prev => prev + emojiData.emoji);
-  setShowEmojiPicker(false);
-};
+  const handleEmojiClick = (emojiData: any) => {
+    setMessage(prev => prev + emojiData.emoji);
+    setShowEmojiPicker(false);
+  };
 
   // Handle file selection
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -429,17 +429,17 @@ const handleEmojiClick = (emojiData: any) => {
                 )}
               </div>
 
-{/* Text Message Input */}
-<input
-  type="text"
-  value={message}
-  onChange={(e) => setMessage(e.target.value)} // Handle text input
-  onKeyDown={(e) => {
-    if (e.key === "Enter") sendMessage();
-  }}
-  placeholder="Type a message..."
-  className="flex-1 p-2 rounded-md border border-gray-300"
-/>
+              {/* Text Message Input */}
+              <input
+                type="text"
+                value={message}
+                onChange={e => setMessage(e.target.value)} // Handle text input
+                onKeyDown={e => {
+                  if (e.key === "Enter") sendMessage();
+                }}
+                placeholder="Type a message..."
+                className="flex-1 p-2 rounded-md border border-gray-300"
+              />
 
               <button
                 onClick={sendMessage}
